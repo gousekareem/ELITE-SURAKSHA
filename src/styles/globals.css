@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red-900:#7F0E1E;--red-800:#9B1226;--red-700:#B8172E;--red:#C8102E;
+  --red-500:#E01535;--red-400:#F03050;--red-100:#FFE8EB;--red-50:#FFF5F6;
+  --white:#FFFFFF;--gray-50:#F9FAFB;--gray-100:#F3F4F6;--gray-200:#E5E7EB;
+  --gray-300:#D1D5DB;--gray-400:#9CA3AF;--gray-500:#6B7280;--gray-700:#374151;--gray-900:#111827;
+  --success:#059669;--success-bg:#ECFDF5;--warn:#D97706;--warn-bg:#FFFBEB;
+  --info:#2563EB;--info-bg:#EFF6FF;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Plus Jakarta Sans',system-ui,sans-serif;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.08),0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg:0 10px 40px rgba(0,0,0,0.10),0 4px 12px rgba(0,0,0,0.05);
+  --shadow-red:0 8px 28px rgba(200,16,46,0.28);
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;--r-2xl:28px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--gray-50);font-family:var(--font-body);color:var(--gray-900);-webkit-font-smoothing:antialiased}
+input,button,textarea,select{font-family:var(--font-body)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--gray-100)}
+::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:4px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bounceY{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes countUp{from{transform:scale(0.5);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes progressFill{from{width:0}to{width:var(--target-w,70%)}}
+
+.anim-fade-up{animation:fadeUp .45s cubic-bezier(.22,1,.36,1) both}
+.anim-fade-in{animation:fadeIn .35s ease both}
+.anim-slide-in{animation:slideIn .4s cubic-bezier(.22,1,.36,1) both}
+.anim-scale-in{animation:scaleIn .4s cubic-bezier(.34,1.56,.64,1) both}
+.anim-bounce{animation:bounceY 1.4s ease-in-out infinite}
+.anim-pulse{animation:pulse 1.2s ease-in-out infinite}
+.anim-spin{animation:spin .9s linear infinite;display:inline-block}
+.anim-countup{animation:countUp .5s cubic-bezier(.34,1.56,.64,1) both}
+.delay-1{animation-delay:.08s}.delay-2{animation-delay:.16s}.delay-3{animation-delay:.24s}
+.delay-4{animation-delay:.32s}.delay-5{animation-delay:.40s}.delay-6{animation-delay:.48s}
+
+.card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-xl);box-shadow:var(--shadow-sm)}
+.card-elevated{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-xl);box-shadow:var(--shadow-md)}
+.card-red{background:linear-gradient(135deg,var(--red) 0%,var(--red-800) 100%);border-radius:var(--r-xl);box-shadow:var(--shadow-red);color:var(--white)}
+.card-red-soft{background:var(--red-50);border:1px solid var(--red-100);border-radius:var(--r-xl)}
+
+.btn-primary{background:linear-gradient(135deg,var(--red-500) 0%,var(--red) 100%);border:none;border-radius:var(--r-md);color:#fff;font-family:var(--font-body);font-weight:700;font-size:15px;padding:15px 24px;cursor:pointer;width:100%;transition:transform .18s,box-shadow .18s,opacity .18s;letter-spacing:.1px;box-shadow:0 4px 14px rgba(200,16,46,.35)}
+.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,16,46,.45)}
+.btn-primary:active:not(:disabled){transform:translateY(0)}
+.btn-primary:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+
+.btn-secondary{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--r-md);color:var(--gray-700);font-family:var(--font-body);font-weight:600;font-size:14px;padding:14px 24px;cursor:pointer;width:100%;transition:all .18s;box-shadow:var(--shadow-sm)}
+.btn-secondary:hover{background:var(--gray-50);border-color:var(--gray-300)}
+
+.btn-outline-red{background:transparent;border:1.5px solid var(--red);border-radius:var(--r-md);color:var(--red);font-family:var(--font-body);font-weight:700;font-size:14px;padding:13px 24px;cursor:pointer;width:100%;transition:all .18s}
+.btn-outline-red:hover{background:var(--red-50)}
+
+.input-field{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--r-md);color:var(--gray-900);font-size:15px;font-family:var(--font-body);padding:14px 16px;width:100%;outline:none;transition:border-color .2s,box-shadow .2s;box-shadow:var(--shadow-sm)}
+.input-field:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(200,16,46,.10)}
+.input-field::placeholder{color:var(--gray-400);font-size:14px}
+
+.form-label{display:block;font-size:11px;font-weight:700;color:var(--gray-500);margin-bottom:7px;letter-spacing:.7px;text-transform:uppercase}
+
+.badge{border-radius:20px;padding:4px 11px;font-size:11px;font-weight:700;display:inline-flex;align-items:center;gap:4px}
+.badge-green{background:var(--success-bg);color:var(--success);border:1px solid #A7F3D0}
+.badge-red{background:var(--red-100);color:var(--red);border:1px solid #FECDD3}
+.badge-amber{background:var(--warn-bg);color:var(--warn);border:1px solid #FDE68A}
+.badge-blue{background:var(--info-bg);color:var(--info);border:1px solid #BFDBFE}
+.badge-gray{background:var(--gray-100);color:var(--gray-500);border:1px solid var(--gray-200)}
+
+.info-box{padding:13px 16px;border-radius:var(--r-md);font-size:12.5px;line-height:1.6;font-weight:500}
+.info-box-red{background:var(--red-50);border:1px solid var(--red-100);color:var(--red-800)}
+.info-box-green{background:var(--success-bg);border:1px solid #A7F3D0;color:#065F46}
+.info-box-amber{background:var(--warn-bg);border:1px solid #FDE68A;color:#92400E}
+.info-box-gray{background:var(--gray-50);border:1px solid var(--gray-200);color:var(--gray-500)}
+.divider{height:1px;background:var(--gray-100)}
+.section-title{font-family:var(--font-body);font-weight:700;font-size:14px;color:var(--gray-900)}

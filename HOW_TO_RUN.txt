@@ -1,0 +1,209 @@
+╔══════════════════════════════════════════════════════════════════╗
+║          ELITE SURAKSHA — HOW TO RUN ON WINDOWS                 ║
+║          Team Elite · KL University · Phase 1 Prototype         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 1 — INSTALL NODE.JS (one-time setup)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open your browser and go to:
+   https://nodejs.org/en/download
+
+2. Download "LTS" version (the left button — e.g., 20.x LTS)
+
+3. Run the installer → click Next all the way → Finish
+
+4. Verify installation:
+   - Press  Win + R  →  type  cmd  →  press Enter
+   - In the black window, type:   node -v
+   - You should see something like:   v20.11.0
+   - Also type:  npm -v   →  should show  10.x.x
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 2 — OPEN THE PROJECT IN VS CODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Option A — Drag and drop:
+  Drag the "elite-suraksha" folder onto the VS Code icon
+
+Option B — From VS Code:
+  File → Open Folder → select "elite-suraksha" folder → OK
+
+Option C — From Windows Explorer:
+  Right-click the "elite-suraksha" folder → "Open with Code"
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 3 — OPEN THE TERMINAL IN VS CODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Press  Ctrl + `  (backtick key, top-left of keyboard)
+  OR
+  Menu → Terminal → New Terminal
+
+  You should see a terminal at the bottom showing something like:
+  PS C:\Users\YourName\...\elite-suraksha>
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 4 — INSTALL DEPENDENCIES (one-time, ~1 minute)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Type this command and press Enter:
+
+      npm install
+
+  Wait for it to finish. You'll see something like:
+  "added 123 packages in 12s"
+
+  ⚠️  If you get a red error about "execution policy", run:
+      Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+      Then press Y and Enter. Then re-run:  npm install
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 5 — START THE APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Type this command and press Enter:
+
+      npm run dev
+
+  You'll see:
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://192.168.x.x:3000/
+
+  Your browser will open automatically at http://localhost:3000
+  If it doesn't open, just paste that URL in Chrome/Edge.
+
+  ✅ The app is now running!
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ STEP 6 — DEMO WALKTHROUGH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1.  Splash Screen    → Click "Get Started"
+
+  2.  Login Screen     → Enter any 10-digit number (e.g. 9876543210)
+                         Click "Send OTP"
+                         Enter OTP:  1 2 3 4 5 6
+                         Click "Verify & Continue"
+
+  3.  Verify Screen    → Enter Aadhaar: 1234 5678 9012
+                         Click "Verify Aadhaar" → wait 2 sec
+                         Select platform: Swiggy
+                         Click the upload box (simulates upload)
+                         Click "Complete Verification"
+
+  4.  Dashboard        → See live risk, weather conditions, payouts
+                         (Weather data is simulated — realistic mock)
+
+  5.  Monitor Tab      → See all live metrics with progress bars
+
+  6.  Simulate Tab     → Select "Heavy Rain" + "Severe"
+                         Click "Simulate Event"
+                         Watch the 4-step AI pipeline
+                         See ₹600 payout confirmation!
+
+  7.  Payouts Tab      → See full history with expandable details
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ OPTIONAL — ADD REAL WEATHER DATA (Free API Key)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  To show LIVE weather from OpenWeatherMap:
+
+  1. Go to: https://openweathermap.org/api
+     → Click "Subscribe" on Free plan → Register → Get API key
+
+  2. In VS Code, copy the file ".env.example" to ".env"
+     (In the terminal: copy .env.example .env)
+
+  3. Open .env and paste your key:
+     VITE_WEATHER_API_KEY=your_actual_key_here
+
+  4. Restart the app (Ctrl+C to stop, then: npm run dev)
+
+  The app auto-detects the key and switches to live data.
+  The dashboard will show "🟢 Live API" instead of "🟡 Simulated".
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ TO STOP THE APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  In the VS Code terminal, press:   Ctrl + C
+  Then press Y if it asks to terminate.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Problem: "npm is not recognized"
+  Fix:     Node.js was not installed correctly. Re-run the Node.js
+           installer and restart your computer, then try again.
+
+  Problem: "Port 3000 already in use"
+  Fix:     Another app is using that port. Kill it or edit
+           vite.config.js and change port: 3000 to port: 3001
+
+  Problem: Blank white screen in browser
+  Fix:     Open browser DevTools (F12) → Console tab
+           Share the error message with your team.
+
+  Problem: Fonts not loading (text looks wrong)
+  Fix:     Make sure you have internet connection (Google Fonts
+           are loaded from the web). Or the app will use fallback
+           system fonts and still work fine.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ PROJECT STRUCTURE (for developers)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  elite-suraksha/
+  ├── index.html                   ← App entry point
+  ├── vite.config.js               ← Vite build config
+  ├── package.json                 ← Dependencies
+  ├── .env.example                 ← Environment variable template
+  ├── HOW_TO_RUN.txt               ← This file
+  └── src/
+      ├── main.jsx                 ← React root mount
+      ├── App.jsx                  ← Screen router
+      ├── styles/
+      │   └── globals.css          ← All global styles, tokens, animations
+      ├── components/
+      │   ├── Shell.jsx            ← Page wrapper with background
+      │   └── BottomNav.jsx        ← Bottom navigation bar
+      ├── services/
+      │   ├── AppContext.jsx       ← Global state (user, payouts)
+      │   └── weatherService.js   ← Weather API + mock fallback
+      ├── hooks/
+      │   └── useWeather.js        ← Weather data hook (auto-refresh)
+      └── screens/
+          ├── SplashScreen.jsx     ← Welcome / brand screen
+          ├── LoginScreen.jsx      ← Phone + OTP auth
+          ├── VerificationScreen.jsx ← Aadhaar KYC + employment
+          ├── DashboardScreen.jsx  ← Main home screen
+          ├── MonitoringScreen.jsx ← Live risk monitoring
+          ├── SimulateScreen.jsx   ← Event simulation + payout
+          └── HistoryScreen.jsx    ← Payout history
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ TEAM ELITE — KL UNIVERSITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  SK. Gouse Kareem   — Team Lead & Product Architect
+  P. Satish Chandra  — Backend Engineer
+  S. Arun            — Frontend Developer
+  P.V. Sai Sandilya  — AI/ML Engineer
+  B. Yaswanth        — DevOps & Security
+
+  Koneru Lakshmaiah Education Foundation (KL University)
+  Elite Suraksha v1.0 — Phase 1 Prototype — 2024-2025
