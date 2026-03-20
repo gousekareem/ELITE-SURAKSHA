@@ -48,7 +48,7 @@
 
 |  Full Technical Documentation |  Demo Video (Phase 1) |
 |:---:|:---:|
-| [![Docs](https://img.shields.io/badge/Google%20Drive-Full%20Docs%20%2820%20Chapters%29-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](YOUR_GOOGLE_DRIVE_LINK_HERE) | [![Video](https://img.shields.io/badge/YouTube-2--Min%20Demo%20Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](YOUR_DEMO_VIDEO_LINK_HERE) |
+| [![Docs](https://img.shields.io/badge/Google%20Drive-Full%20Docs%20%2820%20Chapters%29-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://1drv.ms/w/c/5b1eed8653abcbd2/IQCGx_Xbu9xiTZU--_djtV-lAf2nzHxntLQbX7KsB_VArZY?e=3h1eVv) | [![Video](https://img.shields.io/badge/YouTube-2--Min%20Demo%20Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://1drv.ms/v/c/5b1eed8653abcbd2/IQADo998ZhcCRY11ibq7Tc0iAQqmmapGta6ULJqst637_V4?e=smUQQW) |
 
 ---
 
