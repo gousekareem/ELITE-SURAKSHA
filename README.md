@@ -315,7 +315,7 @@ Per DEVTrails technical requirements — AI/ML is integrated across three functi
 |---|---|---|
 | **README.md** | Persona, workflow, weekly premium, triggers, AI/ML plans, tech stack |  This document |
 | **GitHub Repository** | Same repo used across all phases |  You're here |
-| **2-Minute Video** | Strategy + plan of execution + prototype walkthrough | 🔗 [Watch Demo](YOUR_DEMO_VIDEO_LINK_HERE) |
+| **2-Minute Video** | Strategy + plan of execution + prototype walkthrough | 🔗 [Watch Demo](https://1drv.ms/v/c/5b1eed8653abcbd2/IQADo998ZhcCRY11ibq7Tc0iAQqmmapGta6ULJqst637_V4?e=smUQQW) |
 | **Working Prototype** | Minimal scope frontend demonstrating the core flow |  7 screens |
 
 ### 7 Screens Built
