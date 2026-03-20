@@ -338,48 +338,48 @@ elite-suraksha/
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   PHASE 1 — Foundation & Prototype         ← YOU ARE HERE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ✅  Complete UI/UX — all 7 screens
-  ✅  Real-time weather API integration
-  ✅  AI risk score calculation engine
-  ✅  Parametric trigger simulation
-  ✅  Payout demonstration flow
-  ✅  Global state management (payouts persist across screens)
+    Complete UI/UX — all 7 screens
+    Real-time weather API integration
+    AI risk score calculation engine
+    Parametric trigger simulation
+    Payout demonstration flow
+    Global state management (payouts persist across screens)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   PHASE 2 — Core Product Backend            [Upcoming]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⬜  FastAPI backend (Python)
-  ⬜  PostgreSQL + PostGIS database
-  ⬜  Twilio OTP (real SMS delivery)
-  ⬜  Aadhaar eKYC via UIDAI sandbox
-  ⬜  Razorpay UPI payout integration
-  ⬜  Real-time monitoring microservice (Kafka)
-  ⬜  Parametric trigger engine (live API conditions)
-  ⬜  Claim automation pipeline
-  ⬜  CPCB AQI API integration
-  ⬜  NDMA flood alert integration
+    FastAPI backend (Python)
+    PostgreSQL + PostGIS database
+    Twilio OTP (real SMS delivery)
+    Aadhaar eKYC via UIDAI sandbox
+    Razorpay UPI payout integration
+    Real-time monitoring microservice (Kafka)
+    Parametric trigger engine (live API conditions)
+    Claim automation pipeline
+    CPCB AQI API integration
+    NDMA flood alert integration
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   PHASE 3 — Production Hardening           [Upcoming]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⬜  ML fraud detection (GPS validation, behavioral AI)
-  ⬜  Admin dashboard (risk heatmaps, analytics)
-  ⬜  Kubernetes deployment (GCP/AWS)
-  ⬜  Security audit + VAPT
-  ⬜  IRDAI regulatory sandbox filing
-  ⬜  DPDP Act 2023 compliance review
-  ⬜  Beta launch — 100 workers in Hyderabad
-  ⬜  Performance testing at 10k concurrent users
+    ML fraud detection (GPS validation, behavioral AI)
+    Admin dashboard (risk heatmaps, analytics)
+    Kubernetes deployment (GCP/AWS)
+    Security audit + VAPT
+    IRDAI regulatory sandbox filing
+    DPDP Act 2023 compliance review
+    Beta launch — 100 workers in Hyderabad
+    Performance testing at 10k concurrent users
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   PHASE 4 — Scale & Expansion              [Future]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⬜  Expand to 5 cities (Bangalore, Mumbai, Chennai, Pune, Delhi)
-  ⬜  B2B partnerships with Swiggy / Zomato corporate
-  ⬜  Telugu, Tamil, Kannada, Marathi language support
-  ⬜  Auto-rickshaw & hyperlocal delivery worker coverage
-  ⬜  Annual coverage option
-  ⬜  API licensing to partner insurance companies
+    Expand to 5 cities (Bangalore, Mumbai, Chennai, Pune, Delhi)
+    B2B partnerships with Swiggy / Zomato corporate
+    Telugu, Tamil, Kannada, Marathi language support
+    Auto-rickshaw & hyperlocal delivery worker coverage
+    Annual coverage option
+    API licensing to partner insurance companies
 ```
 
 <br/>
@@ -390,7 +390,7 @@ elite-suraksha/
 
 > These are features and innovations that emerged **during the build process** — ideas that came up between Phase 1 and Phase 2/3 that we plan to evaluate and implement as they mature.
 
-### 🔬 Under Exploration
+###  Under Exploration
 
 | Idea | Status | Target Phase |
 |---|---|---|
@@ -418,11 +418,11 @@ elite-suraksha/
 
 | Name | Role | Responsibilities |
 |---|---|---|
-| **SK. Gouse Kareem** | 🎯 Team Lead & Product Architect | System design, AI/ML models, product strategy, API architecture |
-| **P. Satish Chandra** | ⚙️ Backend Engineer | FastAPI services, database design, payment integration |
-| **S. Arun** | 🎨 Frontend Developer | React/Vite UI, mobile-first design, animations, UX |
-| **P.V. Sai Sandilya** | 🤖 AI/ML Engineer | Risk models, fraud detection, OCR pipeline, data science |
-| **B. Yaswanth** | 🔒 DevOps & Security | Docker/Kubernetes, CI/CD, cloud infra, security |
+| **SK. Gouse Kareem** |  Team Lead & Product Architect | System design, AI/ML models, product strategy, API architecture |
+| **P. Satish Chandra** |  Backend Engineer | FastAPI services, database design, payment integration |
+| **S. Arun** |  Frontend Developer | React/Vite UI, mobile-first design, animations, UX |
+| **P.V. Sai Sandilya** |  AI/ML Engineer | Risk models, fraud detection, OCR pipeline, data science |
+| **B. Yaswanth** |  DevOps & Security | Docker/Kubernetes, CI/CD, cloud infra, security |
 
 <br/>
 
