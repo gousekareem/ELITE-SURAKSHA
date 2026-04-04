@@ -1,0 +1,8 @@
+const FRAUD_THRESHOLDS = {
+  AUTO_APPROVE_MAX: 0.35,
+  MANUAL_REVIEW_MAX: 0.65
+};
+
+module.exports = {
+  FRAUD_THRESHOLDS
+};

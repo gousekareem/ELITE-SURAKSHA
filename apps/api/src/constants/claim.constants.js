@@ -1,0 +1,11 @@
+const TRIGGER_PAYOUTS = {
+  HEAVY_RAIN: 300,
+  HAZARDOUS_AQI: 400,
+  EXTREME_HEAT: 250,
+  FLOOD_ALERT: 800,
+  CURFEW: 500
+};
+
+module.exports = {
+  TRIGGER_PAYOUTS
+};

@@ -1,0 +1,253 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  WORKER
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING_VERIFICATION
+}
+
+enum KycStatus {
+  NOT_STARTED
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum EmploymentStatus {
+  NOT_STARTED
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum PolicyStatus {
+  DRAFT
+  ACTIVE
+  EXPIRED
+  CANCELLED
+  SUSPENDED
+}
+
+enum ClaimStatus {
+  PENDING
+  AUTO_APPROVED
+  MANUAL_REVIEW
+  REJECTED
+  PAID
+}
+
+enum PayoutStatus {
+  PENDING
+  PROCESSING
+  SUCCESS
+  FAILED
+}
+
+enum TriggerType {
+  HEAVY_RAIN
+  HAZARDOUS_AQI
+  EXTREME_HEAT
+  FLOOD_ALERT
+  CURFEW
+}
+
+enum DocumentType {
+  KYC_ID
+  EMPLOYMENT_SCREENSHOT
+  BANK_PROOF
+  PROFILE_PHOTO
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model User {
+  id            String         @id @default(cuid())
+  phone         String         @unique
+  email         String?        @unique
+  role          UserRole       @default(WORKER)
+  status        UserStatus     @default(PENDING_VERIFICATION)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  workerProfile WorkerProfile?
+  otpRequests   OtpRequest[]
+
+  @@map("users")
+}
+
+model WorkerProfile {
+  id                  String           @id @default(cuid())
+  userId              String           @unique
+  fullName            String
+  dateOfBirth         DateTime?
+  primaryCity         String
+  homeLatitude        Decimal?         @db.Decimal(9, 6)
+  homeLongitude       Decimal?         @db.Decimal(9, 6)
+  workPlatform        String
+  aadhaarHash         String?
+  kycStatus           KycStatus        @default(NOT_STARTED)
+  employmentStatus    EmploymentStatus @default(NOT_STARTED)
+  autopayEnabled      Boolean          @default(false)
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+
+  user                User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  documents           WorkerDocument[]
+  policies            Policy[]
+  claims              Claim[]
+  payouts             Payout[]
+  riskSnapshots       RiskSnapshot[]
+  locationLogs        LocationLog[]
+
+  @@map("worker_profiles")
+}
+
+model WorkerDocument {
+  id              String        @id @default(cuid())
+  workerProfileId String
+  type            DocumentType
+  fileUrl         String
+  extractedText   String?
+  reviewStatus    ReviewStatus  @default(PENDING)
+  uploadedAt      DateTime      @default(now())
+
+  workerProfile   WorkerProfile @relation(fields: [workerProfileId], references: [id], onDelete: Cascade)
+
+  @@map("worker_documents")
+}
+
+model Policy {
+  id                  String        @id @default(cuid())
+  workerProfileId     String
+  planName            String
+  weeklyPremium       Decimal       @db.Decimal(10, 2)
+  coverageStart       DateTime
+  coverageEnd         DateTime
+  status              PolicyStatus  @default(DRAFT)
+  exclusionsText      String
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+
+  workerProfile       WorkerProfile @relation(fields: [workerProfileId], references: [id], onDelete: Cascade)
+  claims              Claim[]
+
+  @@map("policies")
+}
+
+model TriggerEvent {
+  id              String       @id @default(cuid())
+  triggerType     TriggerType
+  city            String
+  zoneCode        String?
+  thresholdValue  String
+  actualValue     String
+  detectedAt      DateTime
+  source          String
+  createdAt       DateTime     @default(now())
+
+  claims          Claim[]
+
+  @@map("trigger_events")
+}
+
+model Claim {
+  id              String        @id @default(cuid())
+  workerProfileId String
+  policyId        String
+  triggerEventId  String
+  status          ClaimStatus   @default(PENDING)
+  payoutAmount    Decimal       @db.Decimal(10, 2)
+  fraudScore      Decimal?      @db.Decimal(4, 2)
+  reason          String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  workerProfile   WorkerProfile @relation(fields: [workerProfileId], references: [id], onDelete: Cascade)
+  policy          Policy        @relation(fields: [policyId], references: [id], onDelete: Cascade)
+  triggerEvent    TriggerEvent  @relation(fields: [triggerEventId], references: [id], onDelete: Cascade)
+  payouts         Payout[]
+
+  @@map("claims")
+}
+
+model Payout {
+  id              String        @id @default(cuid())
+  workerProfileId String
+  claimId         String
+  amount          Decimal       @db.Decimal(10, 2)
+  method          String
+  provider        String
+  providerRef     String?
+  status          PayoutStatus  @default(PENDING)
+  attemptedAt     DateTime?
+  settledAt       DateTime?
+  createdAt       DateTime      @default(now())
+
+  workerProfile   WorkerProfile @relation(fields: [workerProfileId], references: [id], onDelete: Cascade)
+  claim           Claim         @relation(fields: [claimId], references: [id], onDelete: Cascade)
+
+  @@map("payouts")
+}
+
+model RiskSnapshot {
+  id                  String        @id @default(cuid())
+  workerProfileId     String
+  city                String
+  weatherRiskScore    Decimal       @db.Decimal(5, 2)
+  aqiRiskScore        Decimal       @db.Decimal(5, 2)
+  heatRiskScore       Decimal       @db.Decimal(5, 2)
+  floodRiskScore      Decimal       @db.Decimal(5, 2)
+  totalRiskScore      Decimal       @db.Decimal(5, 2)
+  recommendedPremium  Decimal       @db.Decimal(10, 2)
+  generatedAt         DateTime      @default(now())
+
+  workerProfile       WorkerProfile @relation(fields: [workerProfileId], references: [id], onDelete: Cascade)
+
+  @@map("risk_snapshots")
+}
+
+model LocationLog {
+  id              String        @id @default(cuid())
+  workerProfileId String
+  latitude        Decimal       @db.Decimal(9, 6)
+  longitude       Decimal       @db.Decimal(9, 6)
+  accuracyMeters  Decimal?      @db.Decimal(8, 2)
+  recordedAt      DateTime      @default(now())
+  source          String
+
+  workerProfile   WorkerProfile @relation(fields: [workerProfileId], references: [id], onDelete: Cascade)
+
+  @@map("location_logs")
+}
+
+model OtpRequest {
+  id          String   @id @default(cuid())
+  userId      String?
+  phone       String
+  otpHash     String
+  expiresAt   DateTime
+  attempts    Int      @default(0)
+  verifiedAt  DateTime?
+  createdAt   DateTime @default(now())
+
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("otp_requests")
+}
