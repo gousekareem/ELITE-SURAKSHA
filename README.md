@@ -50,11 +50,9 @@
 ---
 
 ### Quick Links
-
-|  Full Technical Documentation |  Demo Video (Phase 1) |  Phase 2 Architecture |
+|  Full Technical Documentation |  Demo Video (Phase 1) |  Demo Video (Phase 2) |
 |:---:|:---:|:---:|
-| [![Docs](https://img.shields.io/badge/Google%20Drive-Full%20Docs%20%2820%20Chapters%29-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://1drv.ms/w/c/5b1eed8653abcbd2/IQCGx_Xbu9xiTZU--_djtV-lAf2nzHxntLQbX7KsB_VArZY?e=3h1eVv) | [![Video](https://img.shields.io/badge/YouTube-Phase%201%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://1drv.ms/v/c/5b1eed8653abcbd2/IQADo998ZhcCRY11ibq7Tc0iAQqmmapGta6ULJqst637_V4?e=smUQQW) | [![Architecture](https://img.shields.io/badge/Docs-System%20Architecture-0B2D6B?style=for-the-badge&logo=gitbook&logoColor=white)](#-system-architecture) |
-
+| [![Docs](https://img.shields.io/badge/Google%20Drive-Full%20Docs%20%2820%20Chapters%29-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://1drv.ms/w/c/5b1eed8653abcbd2/IQCGx_Xbu9xiTZU--_djtV-lAf2nzHxntLQbX7KsB_VArZY?e=3h1eVv) | [![Video](https://img.shields.io/badge/YouTube-Phase%201%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://1drv.ms/v/c/5b1eed8653abcbd2/IQADo998ZhcCRY11ibq7Tc0iAQqmmapGta6ULJqst637_V4?e=smUQQW) | [![Video](https://img.shields.io/badge/OneDrive-Phase%202%20Demo-0078D4?style=for-the-badge&logo=microsoftonedrive&logoColor=white)](https://1drv.ms/v/c/5b1eed8653abcbd2/IQAWjo0_woisToWqoWEbrvq0Ad1nRtcxUSgjYd_W0ag-oSs?e=XR4H0H) |
 ---
 
 </div>
